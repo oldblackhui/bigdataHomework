@@ -23,7 +23,7 @@
 ![LNIXYNQN8MPVRZVO17XMP3K](https://user-images.githubusercontent.com/60649120/148231284-6d335cf1-263f-42cd-a962-a916cc09ad17.png)
 
 
-前端就是VUE套用Echarts
+前端VUE套用Echarts
 
 同学写的和后端配套 开箱即用
 
