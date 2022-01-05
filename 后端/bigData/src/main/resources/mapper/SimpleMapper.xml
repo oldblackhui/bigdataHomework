@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cumt.bigdata.mapper.SimpleMapper">
+
+    <select id="getOneMinute" resultType="com.cumt.bigdata.entity.Expressway">
+        select *
+        from expressway
+        where expressway.XH=${xh} and expressway.BZ=${bz}
+    </select>
+    <select id="getCarsGetInSFZname10" resultType="com.cumt.bigdata.vo.SFZCountAndName">
+        SELECT SFZRKMC as SFZname, count( * ) AS countnum  FROM expressway
+        WHERE RKSJ BETWEEN #{d1} AND #{d2}
+        GROUP BY SFZRKMC  ORDER BY countnum DESC  LIMIT 10
+    </select>
+    <select id="getCarsGetOutSFZname10" resultType="com.cumt.bigdata.vo.SFZCountAndName">
+        SELECT SFZCKMC as SFZname, count( * ) AS countnum  FROM expressway
+        WHERE CKSJ BETWEEN #{d1} AND #{d2}
+        GROUP BY SFZCKMC  ORDER BY countnum DESC  LIMIT 10
+    </select>
+
+    <select id="getAllSFZnameAndCountIn" resultType="com.cumt.bigdata.vo.SFZCountAndName">
+        SELECT SFZRKMC as SFZname, count( * ) AS countnum  FROM expressway
+        GROUP BY SFZRKMC  ORDER BY countnum DESC
+    </select>
+    <select id="getAllSFZnameAndCountOut" resultType="com.cumt.bigdata.vo.SFZCountAndName">
+        SELECT SFZCKMC as SFZname, count( * ) AS countnum  FROM expressway
+        GROUP BY SFZCKMC  ORDER BY countnum DESC
+    </select>
+
+    <select id="getTop10SFZForRK" resultType="com.cumt.bigdata.vo.SFZCountAndName">
+        SELECT SFZRKMC as SFZname,COUNT(*) AS countnum
+        FROM expressway
+        where RKSJ BETWEEN #{d1} AND #{d2}
+        GROUP BY SFZname
+        ORDER BY countnum
+        DESC LIMIT 10
+    </select>
+    <select id="getTop10SFZForCK" resultType="com.cumt.bigdata.vo.SFZCountAndName">
+        SELECT SFZRKMC as SFZname,COUNT(*) AS countnum
+        FROM expressway
+        where CKSJ BETWEEN #{d1} AND #{d2}
+        GROUP BY SFZname
+        ORDER BY countnum
+        DESC LIMIT 10
+    </select>
+</mapper>

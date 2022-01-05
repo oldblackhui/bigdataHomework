@@ -1,0 +1,30 @@
+# Data Source sh-cynosdbmysql-grp-7hudoxb2.sql.tencentcdb.com:23003/homework 172.20.10.7:8066/TESTDB
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://sh-cynosdbmysql-grp-7hudoxb2.sql.tencentcdb.com:23003/homework?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: Txh1814489634
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm
+  redis:
+    host: localhost
+    port: 6379
+    database: 2
+    timeout: 180000
+    jedis:
+      pool:
+        max-active: 30
+        max-wait: -1
+        max-idle: 5
+        min-idle: 0
+logging:
+  level:
+    root: info
+mybatis-plus:
+  map-underscore-to-camel-case: false
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+server:
+  port: 8088
+
