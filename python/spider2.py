@@ -5,7 +5,7 @@ pd_data = pd.DataFrame()
 for page in range(1, 12):
     print(page)
     url = 'https://opendata.sz.gov.cn/api/29200_00403621/1/service.xhtml?page=' + str(
-        page) + '&rows=100&appKey=99918eed5f3d4615807b40d223761260'
+        page) + '&rows=100&appKey=???????'
     strhtml = requests.get(url)
     strhtml.encoding = 'utf8'
     dic = strhtml.json()
