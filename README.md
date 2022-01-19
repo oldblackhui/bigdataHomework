@@ -1,6 +1,6 @@
 # **高速公路ETC入深圳数据**大数据可视化
-
-
+给个动态演示图 前一段调一调可以变成实时的
+!(gif)[https://ahuiblog.oss-cn-beijing.aliyuncs.com/github/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%BC%94%E7%A4%BA.gif]
 
 # 后端 
 
